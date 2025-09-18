@@ -1,8 +1,6 @@
 # Scratch Code
 **Creator:** `rapz`  
 
----
-
 Clone features: 
 ```
 C R U D - Already Implemented.
@@ -24,4 +22,4 @@ npm install firebase
 ```
 Step 4: Then hit **save all**
 
-## Hope everything works! 😁👌
+**Hope everything works! 😁👌**
