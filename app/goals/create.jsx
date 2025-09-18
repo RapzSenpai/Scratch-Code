@@ -1,12 +1,28 @@
 import { useState } from 'react'
-import { StyleSheet, Text, TextInput, Pressable } from 'react-native'
+import { StyleSheet, Text, TextInput, Pressable, Keyboard } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { useGoals } from '../../hooks/useGoals'
+import { useRouter } from 'expo-router'
+import { auth } from '../../firebaseConfig'
 
 const Create = () => {
   const [goal, setGoal] = useState('')
-  
-  const handleSubmit = async () => {
+  const { createGoal } = useGoals()
+  const router = useRouter();
 
+  const handleSubmit = async () => {
+    if (!goal.trim()) return;
+
+    await createGoal({
+      title: goal,          
+      progress: 0,
+      userId: auth.currentUser.uid,  
+      createdAt: new Date(),         
+    })
+
+    setGoal('')
+    Keyboard.dismiss()
+    router.push('/goals')
   }
 
   return (
@@ -21,7 +37,7 @@ const Create = () => {
       />
 
       <Pressable onPress={handleSubmit} style={styles.button}>
-        <Text style={{color: 'white'}}>Add New Goal</Text>
+        <Text style={{ color: 'white' }}>Add New Goal</Text>
       </Pressable>
     </SafeAreaView>
   )
