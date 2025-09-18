@@ -7,6 +7,7 @@ C R U D - Already Implemented.
 ```
 
 Basically, what you are going to do is add your `extra features` then link your `Firebase Database` in `FirebaseConfig.js`  
+
 ---
 
 Step 1: Run this in terminal
