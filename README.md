@@ -1,6 +1,8 @@
 # Scratch Code
 **Creator:** `rapz`  
 
+---
+
 Clone features: 
 ```
 C R U D - Already Implemented.
@@ -20,4 +22,6 @@ Step 3: Runt this in terminal
 ```
 npm install firebase
 ```
-Step 4: Hope everything works! 😁👌
+Step 4: Then hit **save all**
+
+## Hope everything works! 😁👌
